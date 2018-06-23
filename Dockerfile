@@ -5,7 +5,7 @@ RUN apt-get update -q
 RUN apt-get dist-upgrade -y
 RUN apt-get install -y coreutils locales
 RUN apt-get install -y mplayer transcode ffmpeg mkvtoolnix mediainfo
-RUN apt-get install -y python
+RUN apt-get install -y python git
 
 # Localization
 RUN locale-gen en_US.UTF-8
@@ -14,7 +14,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 # Build x264
-#RUN apt-get install -y git gcc nasm make
+#RUN apt-get install -y gcc nasm make
 #RUN git clone git://git.videolan.org/x264.git
 #WORKDIR x264
 #RUN git checkout stable && ./configure --enable-pic && make install
