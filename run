@@ -1,1 +1,2 @@
-docker run -i --rm=true -v `pwd`:/home/vlab -v /mnt/raid/video:/home/video -u `id -u`:`id -g` -w /home/vlab vlab "$@"
+VIDEO_WORKDIR=$(pwd)
+docker run --rm=true -t -v $VIDEO_WORKDIR:/home/video vlab "$@"
